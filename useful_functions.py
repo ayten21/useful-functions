@@ -9,6 +9,7 @@ def unzip_data(filename):
   
 
 import datetime
+import tensorflow as tf
 def create_tensorboard_callback(dir_name, model_name):
   """ Creates a Tensorboard Callback to store log files;
   Stores log files with the filepath:
