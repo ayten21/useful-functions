@@ -9,6 +9,7 @@ import zipfile
 class HelperFunc:
     def __init__(self):
         self.data = input('enter data name: ')
+        data = self.data
     def make_confusion_matrix(y_true, y_pred, classes=None, figsize=(10, 10), text_size=15, norm=False, savefig=False): 
         cm = confusion_matrix(y_true, y_pred)
         cm_norm = cm.astype("float") / cm.sum(axis=1)[:, np.newaxis] 
