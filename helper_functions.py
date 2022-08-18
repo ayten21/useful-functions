@@ -80,7 +80,7 @@ def unzip_data(filename):
     zip_ref.extractall()
     zip_ref.close()    
 
-def statistics(data,a):
+def statisticss(data,a):
     print(f"Variable: {a}")
     print(f"Data type of variable: {data[a].dtype}")
     print(f"Features: {data[a].shape[0]}")
