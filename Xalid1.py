@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -13,6 +7,8 @@ from sklearn.metrics import confusion_matrix, accuracy_score, precision_recall_f
 import tensorflow as tf
 import zipfile
 class HelperFunc:
+    def __init__(self):
+        self.data = input('enter data name: ')
     def make_confusion_matrix(y_true, y_pred, classes=None, figsize=(10, 10), text_size=15, norm=False, savefig=False): 
         cm = confusion_matrix(y_true, y_pred)
         cm_norm = cm.astype("float") / cm.sum(axis=1)[:, np.newaxis] 
@@ -87,7 +83,7 @@ class HelperFunc:
         zip_ref.close()    
 
     def statistics(data,a):
-        print(f"Variable: {a}")
+        print(f"Varfrom Xalid1 import HelperFunciable: {a}")
         print(f"Data type of variable: {data[a].dtype}")
         print(f"Features: {data[a].shape[0]}")
         data_is_null = data[a].isnull().values.any()
@@ -171,4 +167,3 @@ class HelperFunc:
         plt.title("abc", fontsize=10, loc="right")
         plt.legend()
         plt.show()
-
