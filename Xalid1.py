@@ -105,7 +105,7 @@ class HelperFunc:
             print(f"List of unique values: {data[a].unique()}")
 
 
-    def histogram(a):
+    def histogram(data, a):
         plt.hist(data[a], bins=25)
         plt.title(a, fontsize=10, loc="center")
         plt.xlabel('Relative frequency')
@@ -113,7 +113,7 @@ class HelperFunc:
         plt.show()
 
 
-    def histbox(a):
+    def histbox(data, a):
         variable = data[a]
         np.array(variable).mean()
         np.median(variable)
@@ -132,7 +132,7 @@ class HelperFunc:
         plt.show()    
 
 
-    def pie(a):
+    def pie(data, a):
         data[a].value_counts(dropna=False).plot(kind='pie', figsize=(6,5), fontsize=10, autopct='%1.1f%%', startangle=0, legend=True, textprops={'color':"white", 'weight':'bold'})
         val = data[a].value_counts(dropna=False)
         value = pd.DataFrame(val)
@@ -143,7 +143,7 @@ class HelperFunc:
         val = pd.concat([value,value_per], axis=1)
         display(val)
 
-    def bar(a):
+    def bar(data, a):
         ax = data[a].value_counts().plot(kind="bar", figsize=(8,6), fontsize=12, color=sns.color_palette("crest"), table=False)
         for i in ax.patches:
             ax.annotate("%.2f" % i.get_height(), (i.get_x() + i.get_width() / 2., i.get_height()), ha='center', va='center', xytext=(0, 5), textcoords='offset points')
@@ -153,7 +153,7 @@ class HelperFunc:
         plt.title(a, fontsize=10, loc="right")
 
 
-    def scatter(x, y, c):
+    def scatter(data, x, y, c):
         targets = data[c].unique()
         for target in targets:
             a = data[data[c] == target][x]
