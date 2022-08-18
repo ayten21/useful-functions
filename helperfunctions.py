@@ -96,7 +96,7 @@ class HelperFunc:
         else:
             print(f"Null value existance: {data[a].isnull().values.any()}")
         print(f"Unique values: {data[a].nunique()}")
-        if data[a].dtype != "str":
+        if data[a].dtype != "0":
             print(f"Min: {int(data[a].min())}")
             print(f"25%: {int(data[a].quantile(q=[.25]).iloc[-1])}")
             print(f"Median: {int(data[a].median())}")
