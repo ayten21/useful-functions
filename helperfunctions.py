@@ -132,7 +132,7 @@ class HelperFunc:
         sns.distplot(variable, ax=ax_hist)
         ax_hist.axvline(mean, color='r', linestyle='--')
         ax_hist.axvline(median, color='g', linestyle='-')
-        plt.title(x, fontsize=10, loc="right")
+        plt.title(a, fontsize=10, loc="right")
         plt.legend({'Mean':mean,'Median':median})
         ax_box.set(xlabel='')
         plt.show()    
@@ -159,7 +159,7 @@ class HelperFunc:
         plt.title(a, fontsize=10, loc="right")
 
 
-    def scatter(data, x, y, c):
+    def scatter(x, y, c):
         targets = data[c].unique()
         for target in targets:
             a = data[data[c] == target][x]
